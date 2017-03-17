@@ -5,10 +5,34 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-<ion-item *ngFor="let usr of user">
+<ion-content class="det">
+  <ion-item *ngFor="let usr of user">
+    <ion-icon name="person">&nbsp;&nbsp;{{usr['name']}}</ion-icon>
+    <p></p>  Branch : {{usr['branch']}}  <p></p>
+          Year : {{usr['year']}}
+      </ion-item>
+<!-- <ion-item *ngFor="let usr of user">
  <ion-icon name="person"></ion-icon>{{usr['name']}}
    <p>Branch : {{usr['branch']}}</p>
    <p>Year : {{usr['year']}}</p>
+ </ion-item> -->
+ <ion-item *ngFor="let item of punches">
+ <ion-grid>
+
+   <ion-row>
+        <ion-col col-md-3><ion-icon name="ios-calendar">Date:</ion-icon></ion-col>
+        <ion-col col-md-3>{{item['date']}}</ion-col>
+   </ion-row>
+
+   <ion-row>
+        <ion-col col-md-3><ion-icon name="eye">Punch In:</ion-icon></ion-col>
+        <ion-col col-md-3>{{item['punch_in']}}</ion-col>
+   </ion-row>
+
+   <ion-row>
+        <ion-col col-md-3><ion-icon name="eye-off">Punch Out:</ion-icon></ion-col>
+        <ion-col col-md-3>{{item['punch_out']}}</ion-col>
+   </ion-row>
+ </ion-grid>
  </ion-item>
 </ion-content>

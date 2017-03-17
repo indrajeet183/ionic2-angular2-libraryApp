@@ -8,9 +8,13 @@ import { NavController ,NavParams} from 'ionic-angular';
 export class DetailsPage {
   item: any;
   user: JSON;
+  punches: JSON;
+  firID:any;
   constructor(public navCtrl: NavController,public params:NavParams,private libraryService: LibraryService) {
       this.item = params.get('item');
-      this.getUser(this.item['fir_id'])
+      this.getUser(this.item['fir_id']);
+      this.firID=this.item['fir_id'];
+      this.getPunches(this.firID);
   }
   ngOnInit(){
     this.getUser(this.item['fir_id']);
@@ -22,6 +26,15 @@ getUser(item){
       console.log(this.user);
     }
 
-  )
+  );
+}
+
+getPunches(firId){
+  this.libraryService.getPunches(firId).subscribe(
+    response => {
+      this.punches = response;
+      console.log(this.punches);
+    }
+  );
 }
 }

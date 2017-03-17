@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {LibraryService} from '../../app/services/library.service';
-import {LibraryPage} from '../library/library';
+//import {LibraryPage} from '../library/library';
 @Component({
   selector: 'settings',
   templateUrl: 'settings.html'

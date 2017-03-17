@@ -38,7 +38,7 @@ export class LibraryService {
 
       getPunches(userId)  {
              // ...using get request
-             return this.http.get(this.baseUrl+'punches/'+userId)
+             return this.http.get(this.baseUrl+'punch/'+userId)
                             // ...and calling .json() on the response to return data
                              .map(res=> res.json())
                              //...errors if any

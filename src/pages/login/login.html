@@ -7,13 +7,19 @@
 </ion-header>
 
 <ion-content padding>
+
   <form (submit)="setUrl()">
     <ion-list>
+      <ion-item>
+        <div *ngIf="error" [(ngModel)]="error">
+          <p>AA{{error}}</p>
+        </div>
+      </ion-item>
       <ion-item>
         <ion-label floating>Host URL</ion-label>
         <ion-input type="text" [(ngModel)]="stringURL" name="stringURL" required></ion-input>
       </ion-item>
-      <button ion-button type="submit" block>Save Changes</button>
+      <button ion-button type="submit" block>Connect</button>
     </ion-list>
     </form>
 </ion-content>
