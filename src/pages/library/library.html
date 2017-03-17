@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Library Application
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="red">
+  <ion-list item-left>
+  <ion-item *ngFor="let item of items">
+  <ion-grid>
+      <button ion-button small color="dark" round (click)="viewItem(item)" id="but">
+  <ion-icon name="ios-contact"></ion-icon>
+  Fir - ID  :- {{item['fir_id']}}
+</button>
+
+    <ion-row>
+         <ion-col col-md-3><ion-icon name="ios-calendar">Date:</ion-icon></ion-col>
+         <ion-col col-md-3>{{item['date']}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+         <ion-col col-md-3><ion-icon name="eye">Punch In:</ion-icon></ion-col>
+         <ion-col col-md-3>{{item['punch_in']}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+         <ion-col col-md-3><ion-icon name="eye-off">Punch Out:</ion-icon></ion-col>
+         <ion-col col-md-3>{{item['punch_out']}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-item>
+</ion-list>
+<!-- <ion-list>
+    <ion-item *ngFor="let item of items">
+    <h2>{{item['fir_id']}}</h2>
+    <ion-icon name="ios-calendar">Date:  </ion-icon>{{item['date']}}<p></p>
+    <ion-icon name="eye"></ion-icon>Punch- In  : <ion-col col-2>{{item['punch_in']}}</ion-col>
+      <p>{{item['punch_out']}}<p>
+    </p>
+    <button ion-button clear item-right (click)="viewItem(item)">View</button>
+  </ion-item>
+</ion-list> -->
+</ion-content>

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title *ngFor="let usr of user">
+      {{usr['name']}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<ion-item *ngFor="let usr of user">
+ <ion-icon name="person"></ion-icon>{{usr['name']}}
+   <p>Branch : {{usr['branch']}}</p>
+   <p>Year : {{usr['year']}}</p>
+ </ion-item>
+</ion-content>
